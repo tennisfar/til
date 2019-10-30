@@ -1,8 +1,8 @@
 ## Prefix Git message with Jira ID on commit
-If your branch were generated with Jira or similar, you get a branch named something like `feature/IU-9547-new-foo-functionality`. 
+If your branch were generated with Jira or similar, your branch could be named `feature/IU-9547-foo`. If you prefer your commit messages to include this ID, having a message output something like `IU-9547: init bar on foo`, but sometimes forget, or often get annoyed with writing this yourself, then this is for you. There are two ways to do this (caution: I've experienced some issues on the latter when using VSC and changing branch).
 
-If you like commit messages like `IU-9547: updated-bar` but get annoyed with writing the prefix `IU-9547:` on all your commits, 
-then go into your `.git/hooks` folder and create a file called `prepare-commit-msg` containing this:
+### Using Git hooks
+Go into your `.git/hooks` folder and create a file called `prepare-commit-msg` containing this:
 
 ```bash
 #!/bin/bash
@@ -23,7 +23,7 @@ Make the file executable with `chmod +x prepare-commit-msg`.
 Next time you commit something, the prefix will be the branch name stripped from everything except the Jira ID, 
 for example: `IU-9547:`.
 
-### Using .gitmessage for prefixing
+### Using .gitmessage
 Another way is to use a `.gitmessage` file (create this file in your home directory). Add this to your `.gitconfig` to let GIT know you want to use it:
 ```bash
 [commit]
