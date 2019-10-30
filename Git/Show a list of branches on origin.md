@@ -4,3 +4,5 @@
 git fetch origin
 git branch -v -a
 ```
+
+Oneliner: `git fetch origin ; git branch -v -a`
