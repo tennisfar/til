@@ -1,5 +1,5 @@
 ## Staging files
-Different ways to stage changed files, and why `git add -A` could be preferred:
+Different ways to stage changed files, and why `git add -A` could be preferred in some cases:
 
 ```bash
 # stages new and modified, without deleted
