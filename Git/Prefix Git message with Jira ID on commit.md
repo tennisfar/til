@@ -1,5 +1,6 @@
 ## Prefix Git message with Jira ID on commit
 If your branch were generated with Jira or similar, you get a branch named something like `feature/IU-9547-new-foo-functionality`. 
+
 If you like commit messages like `IU-9547: updated-bar` but get annoyed with writing the prefix `IU-9547:` on all your commits, 
 then go into your `.git/hooks` folder and create a file called `prepare-commit-msg` containing this:
 
