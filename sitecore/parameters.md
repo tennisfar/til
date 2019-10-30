@@ -1,4 +1,4 @@
-## Sitecore parameters
+## Parameters
 
 ### Go directly to an ID
 
