@@ -1,4 +1,4 @@
-name: GithubPages
+name: BuildAndDeployToMaster
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
         if: success()
         uses: crazy-max/ghaction-github-pages@v1
         with:
-          target_branch: gh-pages
+          target_branch: master
           build_dir: output
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
