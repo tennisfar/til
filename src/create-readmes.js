@@ -69,7 +69,18 @@ const createRootReadme = async function(folderNames) {
   fs.writeFileSync(rootReadmeFile, readmeTemplate)
 }
 
-const createReadmes = async function(folder, fileNames) {}
+const createReadmes = async function(folder, fileNames) {
+  let readmeTemplate = `# ${folder}\n\n`
+
+  fileNames.forEach(fileName => {
+    readmeTemplate += ` * [${fileName}](${fileName})\n`
+  })
+
+  const readmeFile = `${outputPath}/${folder}/readme.md`
+
+  // create new readme
+  fs.writeFileSync(readmeFile, readmeTemplate)
+}
 
 ;(async () => {
   const folderNames = await getFolderNames()
