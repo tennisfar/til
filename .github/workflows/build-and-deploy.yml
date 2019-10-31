@@ -14,6 +14,6 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@master
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: master
-        FOLDER: . 
+        BRANCH: gh-pages
+        FOLDER: Git
         BUILD_SCRIPT: npm install && npm run createReadmes
