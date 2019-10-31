@@ -1,0 +1,23 @@
+{
+  "name": "til",
+  "version": "1.0.0",
+  "description": "> Today I Learned",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikelothar/til.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikelothar/til/issues"
+  },
+  "homepage": "https://github.com/mikelothar/til#readme",
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  }
+}
