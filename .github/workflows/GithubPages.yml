@@ -1,6 +1,9 @@
 name: GithubPages
 
-on: push
+on:
+  push:
+    branches:
+      - develop
 
 jobs:
   publish:
