@@ -51,12 +51,19 @@ const createRootReadme = async function(folderNames) {
   readmeTemplate += `\n\n## Articles\n\n`
 
   folderNames.forEach(folderName => (readmeTemplate += ` * [${folderName}](${folderName})\n`))
-  
+
   const rootReadmeFile = `${rootPath}/readme.md`
 
   // delete old readme
-  fs.access(rootReadmeFile, err => {
-    if (!err) fs.unlinkSync(`${rootPath}/readme.md`)
+  await new Promise((resolve, reject) => {
+    const promise = fs.access(rootReadmeFile, err => {
+      if (!err) {
+        fs.unlinkSync(`${rootPath}/readme.md`)
+        resolve(promise)
+      } else {
+        resolve(promise)
+      }
+    })
   })
 
   // create new readme
