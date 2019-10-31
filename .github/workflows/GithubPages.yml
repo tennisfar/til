@@ -1,4 +1,4 @@
-name: website
+name: GithubPages
 
 on: push
 
@@ -13,7 +13,7 @@ jobs:
         name: Build
         run: |
           mkdir output
-          cat > public/index.html <<EOL
+          cat > output/index.html <<EOL
           <!doctype html>
           <html>
             <head>
