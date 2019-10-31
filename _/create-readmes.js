@@ -1,5 +1,7 @@
 const fs = require('fs')
 const del = require('delete')
+const mkdirp = require('mkdirp')
+
 const ignoreFilesAndFolders = [
   '_',
   'node_modules',
@@ -12,6 +14,7 @@ const ignoreFilesAndFolders = [
 ]
 
 const rootPath = process.cwd()
+mkdirp(`${rootPath}/output`, function(err) {})
 del.sync(['./readme.md'])
 
 const getFolderNames = async function() {
@@ -54,7 +57,7 @@ const createRootReadme = async function(folderNames) {
 
   folderNames.forEach(folderName => (readmeTemplate += ` * [${folderName}](${folderName})\n`))
 
-  const rootReadmeFile = `${rootPath}/readme.md`
+  const rootReadmeFile = `${rootPath}/output/readme.md`
 
   // create new readme
   fs.writeFileSync(rootReadmeFile, readmeTemplate)
