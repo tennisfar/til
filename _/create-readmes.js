@@ -1,4 +1,5 @@
 const fs = require('fs')
+const del = require('delete')
 const ignoreFilesAndFolders = [
   '_',
   'node_modules',
@@ -11,6 +12,7 @@ const ignoreFilesAndFolders = [
 ]
 
 const rootPath = process.cwd()
+del.sync(['./readme.md'])
 
 const getFolderNames = async function() {
   const folderNames = []
@@ -53,18 +55,6 @@ const createRootReadme = async function(folderNames) {
   folderNames.forEach(folderName => (readmeTemplate += ` * [${folderName}](${folderName})\n`))
 
   const rootReadmeFile = `${rootPath}/readme.md`
-
-  // delete old readme
-  await new Promise((resolve, reject) => {
-    const promise = fs.access(rootReadmeFile, err => {
-      if (!err) {
-        fs.unlinkSync(`${rootPath}/readme.md`)
-        resolve(promise)
-      } else {
-        resolve(promise)
-      }
-    })
-  })
 
   // create new readme
   fs.writeFileSync(rootReadmeFile, readmeTemplate)
