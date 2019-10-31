@@ -48,7 +48,7 @@ const getFileNamesInFolder = async function(folder) {
 }
 
 const createRootReadme = async function(folderNames) {
-  let readmeTemplate = fs.readFileSync(`${rootPath}/_/readme.md`, 'utf8')
+  let readmeTemplate = fs.readFileSync(`${rootPath}/_/root-template.md`, 'utf8')
 
   readmeTemplate += `\n\n## Articles\n\n`
 
