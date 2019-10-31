@@ -3,19 +3,22 @@ const del = require('delete')
 const mkdirp = require('mkdirp')
 
 const ignoreFilesAndFolders = [
-  '_',
+  'src',
   'node_modules',
   '.git',
   '.gitignore',
+  '.github',
   '.prettierrc',
   'package.json',
   'package-lock.json',
-  'ReadMe.md',
+  'readme.md',
+  'output',
 ]
 
 const rootPath = process.cwd()
-mkdirp(`${rootPath}/output`, function(err) {})
-del.sync(['./readme.md'])
+const outputPath = `${rootPath}/output`
+del.sync([outputPath])
+mkdirp(outputPath, function(err) {})
 
 const getFolderNames = async function() {
   const folderNames = []
@@ -51,13 +54,16 @@ const getFileNamesInFolder = async function(folder) {
 }
 
 const createRootReadme = async function(folderNames) {
-  let readmeTemplate = fs.readFileSync(`${rootPath}/_/root-template.md`, 'utf8')
+  let readmeTemplate = fs.readFileSync(`${rootPath}/readme.md`, 'utf8')
 
   readmeTemplate += `\n\n## Articles\n\n`
 
-  folderNames.forEach(folderName => (readmeTemplate += ` * [${folderName}](${folderName})\n`))
+  folderNames.forEach(folderName => {
+    mkdirp(`${outputPath}/${folderName}`, function(err) {})
+    readmeTemplate += ` * [${folderName}](${folderName})\n`
+  })
 
-  const rootReadmeFile = `${rootPath}/output/readme.md`
+  const rootReadmeFile = `${outputPath}/readme.md`
 
   // create new readme
   fs.writeFileSync(rootReadmeFile, readmeTemplate)

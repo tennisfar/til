@@ -17,7 +17,7 @@ jobs:
         run: npm install
       -
         name: Build
-        run: npm run createReadmes
+        run: npm run readmes
       -
         name: Deploy
         if: success()

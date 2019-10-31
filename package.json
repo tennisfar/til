@@ -4,7 +4,7 @@
   "description": "> Today I Learned",
   "main": "index.js",
   "scripts": {
-    "createReadmes": "node _/create-readmes.js",
+    "readmes": "node ./src/create-readmes.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
