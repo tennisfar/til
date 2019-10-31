@@ -10,6 +10,9 @@ jobs:
         name: Checkout
         uses: actions/checkout@v1
       -
+        name: Install
+        run: npm install
+      -
         name: Build
         run: npm run createReadmes
       -
