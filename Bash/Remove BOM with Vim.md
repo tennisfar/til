@@ -8,5 +8,9 @@ Open the file with BOM in Vim. Type:
 Save and exit the file, eg. with:
 
 ```bash
-ZZ // or :wq
+ZZ
+```
+.. or:
+```bash
+:qw
 ```
