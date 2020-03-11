@@ -1,6 +1,4 @@
-## Bookmarks
-
-### Append a URL parameter and reload page
+## Append a URL parameter and reload page
 
 Name is optional. For the URL, use this:
 ```
